@@ -1,80 +1,104 @@
-import { ArrowRight, Shield, Droplets, Truck } from 'lucide-react';
+import { CheckCircle, Users, Droplets } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import productLineup from '@/assets/products/product-lineup.jpeg';
 
 const Hero = () => {
   return (
-    <section className="relative overflow-hidden gradient-water bubble-pattern">
-      <div className="container mx-auto py-12 md:py-20 lg:py-28">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Content */}
-          <div className="space-y-6 md:space-y-8 animate-fade-in">
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20">
-              <Shield className="w-4 h-4 text-primary" />
-              <span className="text-sm font-medium text-primary">NAFDAC Approved</span>
-            </div>
+    <section className="relative overflow-hidden bg-blue-50 flex flex-col justify-center pt-10 pb-16 min-h-[85vh]">
+      {/* Background with waterfall/water aesthetic */}
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-100/50 via-white to-blue-50/30 z-0" />
+      {/* Fallback wrapper over gradients for visual depth */}
+      <div className="absolute top-0 right-0 w-[50rem] h-[50rem] bg-blue-400/20 rounded-full blur-[120px] -z-10 mix-blend-multiply" />
+      <div className="absolute bottom-0 left-0 w-[40rem] h-[40rem] bg-[#155baf]/10 rounded-full blur-[100px] -z-10" />
 
-            {/* Headline */}
-            <div className="space-y-4">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-                <span className="text-foreground">Pure Water,</span>
+      <div className="container mx-auto px-4 lg:px-8 relative z-10 flex flex-col justify-center h-full">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center pt-8 pb-12">
+          {/* Content */}
+          <div className="space-y-6 max-w-2xl relative z-20">
+            {/* Logo Text */}
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-[#155baf] tracking-tighter drop-shadow-sm animate-fade-in-up" style={{ fontFamily: 'sans-serif' }}>
+              AQUALIA
+            </h1>
+
+            <div className="space-y-3 animate-fade-in-up delay-100">
+              <h2 className="text-3xl md:text-5xl lg:text-[54px] font-extrabold text-[#1a365d] leading-[1.1] tracking-tight">
+                Pure, Safe, Refreshing
                 <br />
-                <span className="text-gradient">Pure Life</span>
-              </h1>
-              <p className="text-lg md:text-xl text-muted-foreground max-w-lg">
-                Quenching thirst, refreshing life. Experience the taste of premium 
-                quality water trusted by thousands across Nigeria.
+                <span className="text-[#1a365d] font-semibold text-2xl md:text-[34px] leading-tight mt-1 block tracking-normal">- Every Drop Counts</span>
+              </h2>
+              <p className="text-base md:text-lg text-slate-700 font-medium max-w-md mt-4 leading-snug">
+                Trusted, clean water for homes, offices, and businesses
               </p>
             </div>
 
-            {/* CTA */}
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link to="/products">
-                <Button size="lg" className="gradient-ocean text-primary-foreground shadow-elevated hover:shadow-soft transition-all btn-ripple">
-                  Shop Now
-                  <ArrowRight className="w-5 h-5 ml-2" />
+            {/* Action Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 pt-6 animate-fade-in-up delay-200">
+              <Link to="/#retailers">
+                <Button size="lg" className="w-full sm:w-auto h-[3.25rem] px-8 text-sm bg-[#ffc629] hover:bg-[#e6b225] text-[#1a365d] font-black uppercase tracking-widest rounded-md shadow-lg shadow-[#ffc629]/30 hover:scale-105 transition-all duration-300">
+                  Buy Now / Locate Retailer
                 </Button>
               </Link>
-
-            </div>
-
-            {/* Features */}
-            <div className="flex flex-wrap gap-6 pt-4">
-              <div className="flex items-center gap-2">
-                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-                  <Droplets className="w-5 h-5 text-primary" />
-                </div>
-                <div>
-                  <p className="text-sm font-medium text-foreground">Premium Quality</p>
-                  <p className="text-xs text-muted-foreground">100% Pure</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-                  <Truck className="w-5 h-5 text-primary" />
-                </div>
-                <div>
-                  <p className="text-sm font-medium text-foreground">Fast Delivery</p>
-                  <p className="text-xs text-muted-foreground">Across Nigeria</p>
-                </div>
-              </div>
+              <Link to="/distributor/register">
+                <Button size="lg" className="w-full sm:w-auto h-[3.25rem] px-8 text-sm bg-[#16604b] hover:bg-[#12503e] text-white font-bold uppercase tracking-widest rounded-md shadow-lg shadow-[#16604b]/30 hover:scale-105 transition-all duration-300">
+                  Become Distributor
+                </Button>
+              </Link>
             </div>
           </div>
 
           {/* Image */}
-          <div className="relative animate-slide-in-right">
-            <div className="relative z-10">
+          <div className="relative animate-fade-in-up delay-300 lg:ml-auto w-full">
+            <div className="relative z-20">
               <img
                 src={productLineup}
-                alt="Aqualia Water Products"
-                className="w-full h-auto rounded-2xl shadow-elevated animate-float"
+                alt="Aqualia Water Products and Family"
+                className="relative w-full h-auto object-cover object-center transform lg:scale-110 drop-shadow-2xl mix-blend-multiply"
+                style={{ mixBlendMode: 'normal' }}
               />
             </div>
-            {/* Decorative elements */}
-            <div className="absolute -top-8 -right-8 w-48 h-48 bg-accent/20 rounded-full blur-3xl" />
-            <div className="absolute -bottom-8 -left-8 w-64 h-64 bg-primary/20 rounded-full blur-3xl" />
+            {/* Decorative water splash effect behind image */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-blue-300/30 rounded-full blur-3xl -z-10" />
+          </div>
+        </div>
+
+        {/* Trust Badges Bar */}
+        <div className="bg-white/95 backdrop-blur-md rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.06)] mt-auto border border-blue-50 px-6 py-5 md:px-10 md:py-6 animate-fade-in-up delay-400">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-6 divide-y md:divide-y-0 md:divide-x divide-blue-100/80">
+
+            {/* Badge 1 */}
+            <div className="flex items-center gap-4 flex-1 justify-center md:justify-start w-full pt-4 md:pt-0">
+              <div className="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center shrink-0">
+                <Droplets className="w-6 h-6 text-[#155baf]" />
+              </div>
+              <div className="flex flex-col text-left">
+                <span className="text-xl md:text-2xl font-black text-[#1a365d] leading-none mb-1">1000+ <span className="text-[10px] md:text-xs">LITRES</span></span>
+                <span className="text-[10px] md:text-[11px] font-bold text-slate-500 uppercase tracking-[0.15em] leading-none">Delivered Today</span>
+              </div>
+            </div>
+
+            {/* Badge 2 */}
+            <div className="flex items-center gap-4 flex-1 justify-center w-full pt-5 md:pt-0 pl-0 md:pl-8">
+              <div className="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center shrink-0">
+                <Users className="w-6 h-6 text-[#155baf]" />
+              </div>
+              <div className="flex flex-col text-left">
+                <span className="text-xl md:text-2xl font-black text-[#1a365d] leading-none mb-1">500+ <span className="text-[10px] md:text-xs">HAPPY</span></span>
+                <span className="text-[10px] md:text-[11px] font-bold text-slate-500 uppercase tracking-[0.15em] leading-none">Customers</span>
+              </div>
+            </div>
+
+            {/* Badge 3 */}
+            <div className="flex items-center gap-4 flex-1 justify-center md:justify-end w-full pt-5 md:pt-0 pl-0 md:pl-8">
+              <div className="w-12 h-12 rounded-full bg-[#155baf] flex items-center justify-center shrink-0 shadow-lg shadow-blue-500/20">
+                <CheckCircle className="w-6 h-6 text-white" />
+              </div>
+              <div className="flex flex-col text-left">
+                <span className="text-xl md:text-2xl font-black text-[#1a365d] leading-none mb-1">100%</span>
+                <span className="text-[10px] md:text-[11px] font-bold text-[#155baf] uppercase tracking-[0.15em] leading-none">Quality Tested</span>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>

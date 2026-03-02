@@ -21,6 +21,9 @@ import AdminDashboard from "./pages/admin/Dashboard";
 import AdminProducts from "./pages/admin/Products";
 import AdminOrders from "./pages/admin/Orders";
 import AdminUsers from "./pages/admin/Users";
+import Promotions from "./pages/Promotions";
+import HealthImpact from "./pages/HealthImpact";
+import Distributors from "./pages/Distributors";
 
 const queryClient = new QueryClient();
 
@@ -42,6 +45,9 @@ const App = () => (
           <Route path="/distributor/register" element={<DistributorRegister />} />
           <Route path="/distributor/dashboard" element={<DistributorDashboard />} />
           <Route path="/wallet" element={<Wallet />} />
+          <Route path="/promotions" element={<Promotions />} />
+          <Route path="/health-impact" element={<HealthImpact />} />
+          <Route path="/distributors" element={<Distributors />} />
 
           {/* Admin Routes */}
           <Route path="/admin/login" element={<AdminLogin />} />

@@ -153,7 +153,16 @@ const CartContent = () => {
       });
 
     } catch (error: any) {
-      toast.error(error.response?.data?.error || 'Failed to initialize checkout');
+      console.error('Checkout Error:', error);
+
+      // Extract exact message if it's an Axios network error or Paystack synchronous error
+      let errorMessage = 'Failed to initialize checkout';
+      if (error.response?.data?.error) {
+        errorMessage = error.response.data.error;
+      } else if (error.message) {
+        errorMessage = error.message; // Captures "Network Error" or "Paystack public key is required"
+      }
+      toast.error(`Checkout Error: ${errorMessage}`);
       setIsCheckingOut(false);
     }
   };

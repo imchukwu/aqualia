@@ -5,7 +5,7 @@ services:
     buildCommand: npm run build
     staticPublishPath: ./dist
     # If your code is in a sub-folder, uncomment the line below:
-    # rootDir: ./frontend 
+    rootDir: ./frontend 
     routes:
       - source: /*
         destination: /index.html

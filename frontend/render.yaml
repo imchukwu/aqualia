@@ -1,0 +1,7 @@
+services:
+  - type: static
+    name: aqualia
+    routes:
+      - source: /*
+        destination: /index.html
+        type: rewrite

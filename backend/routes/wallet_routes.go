@@ -15,5 +15,6 @@ func SetupWalletRoutes(router *gin.RouterGroup) {
 	{
 		walletGroup.GET("/", controllers.GetWallet)
 		walletGroup.POST("/mock-fund", controllers.MockFund) // TODO: Remove in Production
+		walletGroup.POST("/fund/verify", controllers.VerifyWalletFunding)
 	}
 }

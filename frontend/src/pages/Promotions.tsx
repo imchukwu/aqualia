@@ -11,8 +11,8 @@ const Promotions = () => {
             <main className="flex-1 overflow-x-hidden pt-20 pb-24">
                 <div className="container mx-auto px-4 lg:px-8 max-w-5xl">
                     <div className="text-center mb-16">
-                        <div className="w-20 h-20 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                            <Gift className="w-10 h-10 text-[#ffc629]" />
+                        <div className="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <Gift className="w-10 h-10 text-[#155baf]" />
                         </div>
                         <h1 className="text-4xl md:text-5xl font-black text-[#1a365d] mb-6 tracking-tight">Current Offers & Promotions</h1>
                         <p className="text-xl text-slate-600 max-w-2xl mx-auto">
@@ -21,11 +21,11 @@ const Promotions = () => {
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <div className="bg-white rounded-3xl p-8 shadow-soft border border-yellow-100 hover:shadow-elevated transition-shadow relative overflow-hidden">
-                            <div className="absolute top-0 right-0 w-32 h-32 bg-yellow-100 rounded-full blur-[40px] -z-10 translate-x-10 -translate-y-10"></div>
+                        <div className="bg-white rounded-3xl p-8 shadow-soft border border-blue-100 hover:shadow-elevated transition-shadow relative overflow-hidden">
+                            <div className="absolute top-0 right-0 w-32 h-32 bg-blue-100 rounded-full blur-[40px] -z-10 translate-x-10 -translate-y-10"></div>
                             <h3 className="text-2xl font-black text-[#1a365d] mb-4">Buy 6, Get 1 Free</h3>
                             <p className="text-slate-600 mb-6">Purchase any 6 packs of 1.5L PET bottles or sachets and get one additional pack absolutely free. Offer valid for a limited time.</p>
-                            <Link to="/products"><Button className="bg-[#ffc629] hover:bg-[#e6b225] text-[#1a365d] font-bold rounded-full">Shop Now <ArrowRight className="ml-2 w-4 h-4" /></Button></Link>
+                            <Link to="/products"><Button className="bg-[#155baf] hover:bg-[#114b93] text-white font-bold rounded-full">Shop Now <ArrowRight className="ml-2 w-4 h-4" /></Button></Link>
                         </div>
 
                         <div className="bg-[#155baf] text-white rounded-3xl p-8 shadow-soft hover:shadow-elevated transition-shadow relative overflow-hidden">

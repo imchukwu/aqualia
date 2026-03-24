@@ -14,6 +14,7 @@ func SetupOrderRoutes(router *gin.RouterGroup) {
 	{
 		orderGroup.POST("", controllers.CreateOrder)
 		orderGroup.GET("", controllers.GetUserOrders)
+		orderGroup.POST("/verify-payment", controllers.VerifyOrderPayment)
 	}
 
 	adminOrderGroup := router.Group("/admin/orders")

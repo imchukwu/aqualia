@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { ShoppingCart, User, Menu, X, Search, Globe, Phone, Mail } from 'lucide-react';
+import { ShoppingCart, User, Menu, X, Search, Globe, Phone, Mail, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
@@ -69,6 +69,15 @@ const Header = () => {
                     <span>99077389469</span>
                   </div>
                 </div>
+                <a
+                  href="https://wa.me/2349060573481"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 border-l border-blue-200 pl-4 text-green-600 hover:text-green-700 transition-colors"
+                >
+                  <MessageCircle className="w-4 h-4" />
+                  <span>WhatsApp</span>
+                </a>
               </div>
             </div>
           </div>
@@ -86,7 +95,7 @@ const Header = () => {
                   <a
                     key={link.href}
                     href={link.href}
-                    className={`text-sm font-medium hover:text-yellow-400 transition-colors py-3 relative tracking-wide ${isActive(link.href) ? 'text-yellow-400' : 'text-white/90'}`}
+                    className={`text-sm font-medium hover:text-blue-200 transition-colors py-3 relative tracking-wide ${isActive(link.href) ? 'text-blue-200 border-b-2 border-blue-200' : 'text-white/90'}`}
                   >
                     {link.label}
                     {link.label === 'Health Impact' && <span className="w-1 h-1 rounded-full bg-white absolute top-1/2 -right-3 transform -translate-y-1/2" />}
@@ -103,7 +112,7 @@ const Header = () => {
                       <Input
                         type="search"
                         placeholder="Search products..."
-                        className="w-48 h-8 bg-white/10 border-white/20 text-white placeholder:text-white/50 focus-visible:ring-yellow-400"
+                        className="w-48 h-8 bg-white/10 border-white/20 text-white placeholder:text-white/50 focus-visible:ring-blue-300"
                         autoFocus
                         onBlur={() => setIsSearchOpen(false)}
                       />
@@ -113,7 +122,7 @@ const Header = () => {
                       variant="ghost"
                       size="icon"
                       onClick={() => setIsSearchOpen(true)}
-                      className="text-white hover:text-yellow-400 hover:bg-white/10"
+                      className="text-white hover:text-blue-200 hover:bg-white/10"
                     >
                       <Search className="w-4 h-4" />
                     </Button>
@@ -122,10 +131,10 @@ const Header = () => {
 
                 {/* Cart */}
                 <Link to="/cart">
-                  <Button variant="ghost" size="icon" className="relative text-white hover:text-yellow-400 hover:bg-white/10">
+                  <Button variant="ghost" size="icon" className="relative text-white hover:text-blue-200 hover:bg-white/10">
                     <ShoppingCart className="w-4 h-4" />
                     {totalItems > 0 && (
-                      <Badge className="absolute -top-1 -right-1 h-4 w-4 flex items-center justify-center p-0 text-[10px] bg-yellow-400 text-[#155baf] font-bold border-none">
+                      <Badge className="absolute -top-1 -right-1 h-4 w-4 flex items-center justify-center p-0 text-[10px] bg-red-500 text-white font-bold border-none">
                         {totalItems}
                       </Badge>
                     )}
@@ -135,7 +144,7 @@ const Header = () => {
                 {/* Auth */}
                 {!user ? (
                   <Link to="/auth" className="hidden md:block">
-                    <Button variant="ghost" size="sm" className="text-white hover:text-yellow-400 hover:bg-white/10 font-semibold gap-2">
+                    <Button variant="ghost" size="sm" className="text-white hover:text-blue-200 hover:bg-white/10 font-semibold gap-2">
                       <User className="w-4 h-4" />
                       Sign In
                     </Button>
@@ -144,7 +153,7 @@ const Header = () => {
                   <div className="hidden md:block">
                     <DropdownMenu>
                       <DropdownMenuTrigger asChild>
-                        <Button variant="ghost" size="sm" className="flex items-center gap-2 text-white hover:text-yellow-400 hover:bg-white/10">
+                        <Button variant="ghost" size="sm" className="flex items-center gap-2 text-white hover:text-blue-200 hover:bg-white/10">
                           <User className="w-4 h-4" />
                           <span className="max-w-[100px] truncate">{user.name}</span>
                         </Button>
@@ -205,7 +214,7 @@ const Header = () => {
                     href={link.href}
                     onClick={() => setIsMenuOpen(false)}
                     className={`px-4 py-3 text-sm font-medium transition-colors ${isActive(link.href)
-                      ? 'text-yellow-400 bg-white/5'
+                      ? 'text-blue-200 bg-white/5'
                       : 'text-white/90 hover:bg-white/10'
                       }`}
                   >
@@ -218,7 +227,7 @@ const Header = () => {
               <div className="px-4 pt-2 pb-4">
                 {!user ? (
                   <Link to="/auth" onClick={() => setIsMenuOpen(false)}>
-                    <Button className="w-full bg-yellow-400 text-blue-900 hover:bg-yellow-500">
+                    <Button className="w-full bg-red-500 text-white hover:bg-red-600">
                       <User className="w-4 h-4 mr-2" />
                       Sign In
                     </Button>

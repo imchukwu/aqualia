@@ -9,15 +9,15 @@ import CategoryCard from '@/components/CategoryCard';
 import { useState, useEffect } from 'react';
 
 const categories = [
-  { id: 'sachets', name: 'Pure Water Sachets', description: 'Affordable, clean water in convenient 50cl sachets.', icon: '💧', count: 1 },
-  { id: 'bottles', name: 'PET Bottles', description: 'Premium table water in 50cl, 75cl, and 1.5L bottles.', icon: '🍾', count: 3 },
-  { id: 'dispenser', name: 'Dispenser Bottles', description: 'Large base bottles for homes and offices.', icon: '🚰', count: 1 },
+  { id: 'Sachet Water', name: 'Sachet Water', description: 'Affordable, hygienic daily drinking water in convenient 50cl sachets.', icon: '💧', count: 1 },
+  { id: 'Bottle Water', name: 'Bottle Water', description: '50cl | 75cl | 1.5L bottles — perfect for retail, events & hospitality.', icon: '🍾', count: 3 },
+  { id: 'Dispenser Bottles', name: 'Dispenser Bottles', description: '20L dispenser jar — ideal for homes, offices & institutions.', icon: '🚰', count: 1 },
 ];
 
 const promotionsList = [
-  { id: 1, title: 'Buy 6, Get 1 Free', desc: 'On all 1.5L PET bottles purchased this weekend.', bg: 'bg-[#ffc629]' },
+  { id: 1, title: 'Buy 6, Get 1 Free', desc: 'On all 1.5L PET bottles purchased this weekend.', bg: 'bg-[#1a365d]' },
   { id: 2, title: 'Subscribe & Save 10%', desc: 'Set up weekly deliveries and lock in your discount.', bg: 'bg-[#155baf]' },
-  { id: 3, title: 'Distributor Starter Pack', desc: 'Get branded materials free on your first bulk order.', bg: 'bg-[#16604b]' }
+  { id: 3, title: 'Distributor Starter Pack', desc: 'Get branded materials free on your first bulk order.', bg: 'bg-[#1a365d]' }
 ];
 
 const Index = () => {
@@ -72,7 +72,7 @@ const Index = () => {
                 <p className="text-slate-600 mt-2">Take advantage of our current offers.</p>
               </div>
               <Link to="/promotions">
-                <Button variant="outline" className="border-[#ffc629] text-[#1a365d] hover:bg-[#ffc629] hover:text-[#1a365d] font-bold px-6 h-10 shadow-sm rounded-full transition-all">
+                <Button variant="outline" className="border-[#155baf] text-[#155baf] hover:bg-[#155baf] hover:text-white font-bold px-6 h-10 shadow-sm rounded-full transition-all">
                   See All Promotions
                 </Button>
               </Link>
@@ -112,18 +112,58 @@ const Index = () => {
         <section className="py-16 md:py-24 bg-white border-b border-blue-50">
           <div className="container mx-auto px-4 lg:px-8">
             <div className="max-w-3xl mx-auto text-center">
-              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Truck className="w-8 h-8 text-[#16604b]" />
+              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Truck className="w-8 h-8 text-[#155baf]" />
               </div>
               <h2 className="text-3xl md:text-4xl font-black text-[#1a365d] mb-4 tracking-tight">Join Our Network</h2>
               <p className="text-lg text-slate-600 mb-8 leading-relaxed">
                 Become a certified distributor and start your own lucrative business. Enjoy bulk discounts, marketing support, and a streamlined workflow that guarantees growth.
               </p>
               <Link to="/distributors">
-                <Button className="bg-[#16604b] hover:bg-[#12503e] text-white font-bold px-8 h-12 rounded-full shadow-md uppercase tracking-wide transition-all hover:scale-105">
+                <Button className="bg-[#155baf] hover:bg-[#114b93] text-white font-bold px-8 h-12 rounded-full shadow-md uppercase tracking-wide transition-all hover:scale-105">
                   Become a Distributor <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>
               </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* Why Aqualia Section */}
+        <section className="py-16 md:py-20 bg-[#155baf] text-white">
+          <div className="container mx-auto px-4 lg:px-8">
+            <div className="text-center mb-10">
+              <h2 className="text-3xl md:text-4xl font-black tracking-tight mb-3">Why Aqualia?</h2>
+              <p className="text-white/80 text-lg">The standard every drop is held to.</p>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+              {[
+                { icon: '🔬', text: 'Advanced multi-stage filtration' },
+                { icon: '✅', text: 'NAFDAC & SON compliant' },
+                { icon: '🍶', text: 'Bottles, sachet & dispenser sizes' },
+                { icon: '💧', text: 'Consistent taste & purity' },
+                { icon: '🔐', text: 'Anti-counterfeit QR protected' },
+              ].map((item, i) => (
+                <div key={i} className="flex flex-col items-center text-center gap-3 bg-white/10 rounded-2xl p-6 hover:bg-white/20 transition-colors">
+                  <span className="text-4xl">{item.icon}</span>
+                  <p className="font-semibold text-sm leading-snug">{item.text}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Trust / Used By Section */}
+        <section className="py-14 md:py-20 bg-white border-b border-blue-50">
+          <div className="container mx-auto px-4 lg:px-8 text-center">
+            <p className="text-[#155baf] font-bold tracking-wider uppercase text-sm mb-3">Trusted Across Nigeria</p>
+            <h2 className="text-3xl md:text-4xl font-black text-[#1a365d] mb-10 tracking-tight">Used By</h2>
+            <div className="flex flex-wrap justify-center gap-4 md:gap-6">
+              {['Retailers', 'Offices', 'Schools', 'Event Planners', 'Distributors Nationwide'].map((group) => (
+                <span key={group} className="inline-flex items-center gap-2 px-5 py-3 bg-blue-50 border border-blue-100 text-[#1a365d] font-bold rounded-full text-sm shadow-sm">
+                  <span className="w-2 h-2 bg-[#155baf] rounded-full"></span>
+                  {group}
+                </span>
+              ))}
             </div>
           </div>
         </section>
@@ -158,15 +198,15 @@ const Index = () => {
                   </p>
                   <ul className="space-y-3 mt-6">
                     <li className="flex items-start gap-3">
-                      <Check className="w-6 h-6 text-green-500 shrink-0 mt-0.5" />
+                      <Check className="w-6 h-6 text-[#155baf] shrink-0 mt-0.5" />
                       <span><strong>Optimized pH Levels:</strong> Balanced for perfect absorption.</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <Check className="w-6 h-6 text-green-500 shrink-0 mt-0.5" />
+                      <Check className="w-6 h-6 text-[#155baf] shrink-0 mt-0.5" />
                       <span><strong>Rigorous Filtration:</strong> Multi-stage reverse osmosis process.</span>
                     </li>
                     <li className="flex items-start gap-3">
-                      <Check className="w-6 h-6 text-green-500 shrink-0 mt-0.5" />
+                      <Check className="w-6 h-6 text-[#155baf] shrink-0 mt-0.5" />
                       <span><strong>Essential Minerals:</strong> Fortified for your daily health needs.</span>
                     </li>
                   </ul>

@@ -11,6 +11,7 @@ import api from '@/lib/api';
 import { toast } from 'sonner';
 import useAuthStore from '@/store/authStore';
 import { Navigate } from 'react-router-dom';
+import { usePaystackPayment } from 'react-paystack';
 
 interface Transaction {
     id: number;
@@ -50,6 +51,36 @@ const Wallet = () => {
         }
     }, [user]);
 
+    const config = {
+        reference: (new Date()).getTime().toString(),
+        email: user?.email || 'customer@aqualia.com',
+        amount: parseFloat(fundAmount) * 100 || 0, // Paystack expects amount in kobo
+        publicKey: import.meta.env.VITE_PAYSTACK_PUBLIC_KEY,
+    };
+
+    const initializePayment = usePaystackPayment(config);
+
+    const onSuccess = async (reference: any) => {
+        try {
+            await api.post('/wallet/fund/verify', {
+                reference: reference.reference,
+                amount: parseFloat(fundAmount)
+            });
+            toast.success(`Successfully funded wallet with ₦${parseFloat(fundAmount).toLocaleString()}`);
+            setFundAmount('');
+            fetchWalletData(); // Refresh UI
+        } catch (err: any) {
+            toast.error(err.response?.data?.error || "Funding verification failed.");
+        } finally {
+            setIsFunding(false);
+        }
+    };
+
+    const onClose = () => {
+        toast.error('Payment cancelled');
+        setIsFunding(false);
+    };
+
     const handleFundWallet = async (e: React.FormEvent) => {
         e.preventDefault();
         const amount = parseFloat(fundAmount);
@@ -59,21 +90,10 @@ const Wallet = () => {
         }
 
         setIsFunding(true);
-        // TODO: Integrate actual Paystack initialization here
-        // For now, we simulate a direct DB credit for testing the ledger
-        setTimeout(async () => {
-            try {
-                // Mock endpoint call that would normally happen via Webhook
-                await api.post('/wallet/mock-fund', { amount });
-                toast.success(`Successfully funded wallet with ₦${amount.toLocaleString()}`);
-                setFundAmount('');
-                fetchWalletData(); // Refresh UI
-            } catch (err) {
-                toast.error("Funding simulation failed.");
-            } finally {
-                setIsFunding(false);
-            }
-        }, 1500);
+        initializePayment({
+            onSuccess,
+            onClose
+        });
     };
 
     if (!user || user.role !== 'DISTRIBUTOR') {

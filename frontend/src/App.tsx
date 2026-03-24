@@ -24,6 +24,7 @@ import AdminUsers from "./pages/admin/Users";
 import Promotions from "./pages/Promotions";
 import HealthImpact from "./pages/HealthImpact";
 import Distributors from "./pages/Distributors";
+import QualitySafety from "./pages/QualitySafety";
 
 const queryClient = new QueryClient();
 
@@ -48,6 +49,7 @@ const App = () => (
           <Route path="/promotions" element={<Promotions />} />
           <Route path="/health-impact" element={<HealthImpact />} />
           <Route path="/distributors" element={<Distributors />} />
+          <Route path="/quality-safety" element={<QualitySafety />} />
 
           {/* Admin Routes */}
           <Route path="/admin/login" element={<AdminLogin />} />

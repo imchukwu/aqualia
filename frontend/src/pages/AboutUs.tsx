@@ -40,8 +40,7 @@ const AboutUs = () => {
               About Aqualia
             </h1>
             <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-              Quenching thirst, refreshing life. We are Nigeria's trusted source
-              for premium quality pure water.
+              A Nigerian-owned water processing company committed to delivering safe, refreshing, and premium drinking water to every home, office, and community.
             </p>
           </div>
         </section>
@@ -56,20 +55,13 @@ const AboutUs = () => {
                 </h2>
                 <div className="space-y-4 text-muted-foreground">
                   <p>
-                    Aqualia Table Water was founded with a simple yet powerful mission:
-                    to provide every Nigerian with access to pure, safe, and refreshing water.
-                    Based in Owerri, Imo State, we started as a small family business with
-                    a commitment to quality.
+                    Aqualia Table Water is a Nigerian-owned water processing company committed to delivering safe, refreshing and premium drinking water. Our production facility operates under strict hygiene standards using modern filtration and purification technology to ensure every drop meets quality expectations.
                   </p>
                   <p>
-                    Today, we have grown to become one of the most trusted water brands
-                    in the region, serving thousands of homes, offices, and businesses
-                    with our premium water products.
+                    Today, we have grown to become one of the most trusted water brands in the region, serving thousands of homes, offices, and businesses with our premium water products.
                   </p>
                   <p>
-                    Our state-of-the-art purification facility uses advanced multi-stage
-                    filtration and UV treatment to ensure every drop of Aqualia water
-                    meets the highest purity standards.
+                    Our state-of-the-art purification facility uses advanced multi-stage filtration, reverse osmosis, UV sterilization, and ozone treatment to ensure every drop of Aqualia water meets the highest purity standards.
                   </p>
                 </div>
               </div>
@@ -96,9 +88,7 @@ const AboutUs = () => {
                 </div>
                 <h3 className="text-2xl font-bold text-foreground mb-4">Our Mission</h3>
                 <p className="text-muted-foreground">
-                  To provide affordable, high-quality, and safe drinking water to every
-                  Nigerian household and business, while maintaining the highest standards
-                  of production and customer service.
+                  To make clean water accessible, affordable, and trustworthy across Nigeria and Africa.
                 </p>
               </div>
               <div className="p-8 rounded-3xl bg-card shadow-soft">

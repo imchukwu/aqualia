@@ -12,10 +12,11 @@ const Footer = () => {
           <div>
             <h4 className="font-bold text-lg text-white mb-6 tracking-wide">Quick Links</h4>
             <ul className="space-y-4">
-              <li><Link to="/" className="text-[13px] text-white/80 hover:text-yellow-400 font-medium tracking-wider flex items-center before:content-[''] before:w-1.5 before:h-1.5 before:bg-yellow-400 before:rounded-full before:mr-2 before:opacity-0 hover:before:opacity-100 transition-all">Home</Link></li>
-              <li><Link to="/products" className="text-[13px] text-white/80 hover:text-yellow-400 font-medium tracking-wider flex items-center before:content-[''] before:w-1.5 before:h-1.5 before:bg-yellow-400 before:rounded-full before:mr-2 before:opacity-0 hover:before:opacity-100 transition-all">Products</Link></li>
-              <li><Link to="/#promotions" className="text-[13px] text-white/80 hover:text-yellow-400 font-medium tracking-wider flex items-center before:content-[''] before:w-1.5 before:h-1.5 before:bg-yellow-400 before:rounded-full before:mr-2 before:opacity-0 hover:before:opacity-100 transition-all">Promotions</Link></li>
-              <li><Link to="/contact-us" className="text-[13px] text-white/80 hover:text-yellow-400 font-medium tracking-wider flex items-center before:content-[''] before:w-1.5 before:h-1.5 before:bg-yellow-400 before:rounded-full before:mr-2 before:opacity-0 hover:before:opacity-100 transition-all">Contact Us</Link></li>
+              <li><Link to="/" className="text-[13px] text-white/80 hover:text-blue-300 font-medium tracking-wider flex items-center before:content-[''] before:w-1.5 before:h-1.5 before:bg-blue-300 before:rounded-full before:mr-2 before:opacity-0 hover:before:opacity-100 transition-all">Home</Link></li>
+              <li><Link to="/products" className="text-[13px] text-white/80 hover:text-blue-300 font-medium tracking-wider flex items-center before:content-[''] before:w-1.5 before:h-1.5 before:bg-blue-300 before:rounded-full before:mr-2 before:opacity-0 hover:before:opacity-100 transition-all">Products</Link></li>
+              <li><Link to="/#promotions" className="text-[13px] text-white/80 hover:text-blue-300 font-medium tracking-wider flex items-center before:content-[''] before:w-1.5 before:h-1.5 before:bg-blue-300 before:rounded-full before:mr-2 before:opacity-0 hover:before:opacity-100 transition-all">Promotions</Link></li>
+              <li><Link to="/quality-safety" className="text-[13px] text-white/80 hover:text-blue-300 font-medium tracking-wider flex items-center before:content-[''] before:w-1.5 before:h-1.5 before:bg-blue-300 before:rounded-full before:mr-2 before:opacity-0 hover:before:opacity-100 transition-all">Quality & Safety</Link></li>
+              <li><Link to="/contact-us" className="text-[13px] text-white/80 hover:text-blue-300 font-medium tracking-wider flex items-center before:content-[''] before:w-1.5 before:h-1.5 before:bg-blue-300 before:rounded-full before:mr-2 before:opacity-0 hover:before:opacity-100 transition-all">Contact Us</Link></li>
             </ul>
           </div>
 
@@ -23,10 +24,10 @@ const Footer = () => {
           <div>
             <h4 className="font-bold text-lg text-white mb-6 tracking-wide">Our Products</h4>
             <ul className="space-y-4">
-              <li><Link to="/products" className="text-[13px] text-white/80 hover:text-yellow-400 font-medium tracking-wider flex items-center before:content-[''] before:w-1.5 before:h-1.5 before:bg-yellow-400 before:rounded-full before:mr-2 before:opacity-0 hover:before:opacity-100 transition-all">Bottled Water</Link></li>
-              <li><Link to="/products" className="text-[13px] text-white/80 hover:text-yellow-400 font-medium tracking-wider flex items-center before:content-[''] before:w-1.5 before:h-1.5 before:bg-yellow-400 before:rounded-full before:mr-2 before:opacity-0 hover:before:opacity-100 transition-all">Dispenser Water</Link></li>
-              <li><Link to="/products" className="text-[13px] text-white/80 hover:text-yellow-400 font-medium tracking-wider flex items-center before:content-[''] before:w-1.5 before:h-1.5 before:bg-yellow-400 before:rounded-full before:mr-2 before:opacity-0 hover:before:opacity-100 transition-all">Sachet Packs</Link></li>
-              <li><Link to="/products" className="text-[13px] text-white/80 hover:text-yellow-400 font-medium tracking-wider flex items-center before:content-[''] before:w-1.5 before:h-1.5 before:bg-yellow-400 before:rounded-full before:mr-2 before:opacity-0 hover:before:opacity-100 transition-all">Accessories</Link></li>
+              <li><Link to="/products" className="text-[13px] text-white/80 hover:text-blue-300 font-medium tracking-wider flex items-center before:content-[''] before:w-1.5 before:h-1.5 before:bg-blue-300 before:rounded-full before:mr-2 before:opacity-0 hover:before:opacity-100 transition-all">Bottled Water</Link></li>
+              <li><Link to="/products" className="text-[13px] text-white/80 hover:text-blue-300 font-medium tracking-wider flex items-center before:content-[''] before:w-1.5 before:h-1.5 before:bg-blue-300 before:rounded-full before:mr-2 before:opacity-0 hover:before:opacity-100 transition-all">Dispenser Water</Link></li>
+              <li><Link to="/products" className="text-[13px] text-white/80 hover:text-blue-300 font-medium tracking-wider flex items-center before:content-[''] before:w-1.5 before:h-1.5 before:bg-blue-300 before:rounded-full before:mr-2 before:opacity-0 hover:before:opacity-100 transition-all">Sachet Packs</Link></li>
+              <li><Link to="/products" className="text-[13px] text-white/80 hover:text-blue-300 font-medium tracking-wider flex items-center before:content-[''] before:w-1.5 before:h-1.5 before:bg-blue-300 before:rounded-full before:mr-2 before:opacity-0 hover:before:opacity-100 transition-all">Accessories</Link></li>
             </ul>
           </div>
 
@@ -34,10 +35,10 @@ const Footer = () => {
           <div>
             <h4 className="font-bold text-lg text-white mb-6 tracking-wide">Become Distributor.</h4>
             <ul className="space-y-4">
-              <li><Link to="/distributor/register" className="text-[13px] text-white/80 hover:text-yellow-400 font-medium tracking-wider flex items-center before:content-[''] before:w-1.5 before:h-1.5 before:bg-yellow-400 before:rounded-full before:mr-2 before:opacity-0 hover:before:opacity-100 transition-all">Start Local Business</Link></li>
-              <li><Link to="/distributor/register" className="text-[13px] text-white/80 hover:text-yellow-400 font-medium tracking-wider flex items-center before:content-[''] before:w-1.5 before:h-1.5 before:bg-yellow-400 before:rounded-full before:mr-2 before:opacity-0 hover:before:opacity-100 transition-all">High Commissions</Link></li>
-              <li><Link to="/distributor/register" className="text-[13px] text-white/80 hover:text-yellow-400 font-medium tracking-wider flex items-center before:content-[''] before:w-1.5 before:h-1.5 before:bg-yellow-400 before:rounded-full before:mr-2 before:opacity-0 hover:before:opacity-100 transition-all">Marketing Support</Link></li>
-              <li><Link to="/distributor/register" className="text-[13px] text-white/80 hover:text-yellow-400 font-medium tracking-wider flex items-center before:content-[''] before:w-1.5 before:h-1.5 before:bg-yellow-400 before:rounded-full before:mr-2 before:opacity-0 hover:before:opacity-100 transition-all">Training Programs</Link></li>
+              <li><Link to="/distributor/register" className="text-[13px] text-white/80 hover:text-blue-300 font-medium tracking-wider flex items-center before:content-[''] before:w-1.5 before:h-1.5 before:bg-blue-300 before:rounded-full before:mr-2 before:opacity-0 hover:before:opacity-100 transition-all">Start Local Business</Link></li>
+              <li><Link to="/distributor/register" className="text-[13px] text-white/80 hover:text-blue-300 font-medium tracking-wider flex items-center before:content-[''] before:w-1.5 before:h-1.5 before:bg-blue-300 before:rounded-full before:mr-2 before:opacity-0 hover:before:opacity-100 transition-all">High Commissions</Link></li>
+              <li><Link to="/distributor/register" className="text-[13px] text-white/80 hover:text-blue-300 font-medium tracking-wider flex items-center before:content-[''] before:w-1.5 before:h-1.5 before:bg-blue-300 before:rounded-full before:mr-2 before:opacity-0 hover:before:opacity-100 transition-all">Marketing Support</Link></li>
+              <li><Link to="/distributor/register" className="text-[13px] text-white/80 hover:text-blue-300 font-medium tracking-wider flex items-center before:content-[''] before:w-1.5 before:h-1.5 before:bg-blue-300 before:rounded-full before:mr-2 before:opacity-0 hover:before:opacity-100 transition-all">Training Programs</Link></li>
             </ul>
           </div>
 

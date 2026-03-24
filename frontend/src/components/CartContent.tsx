@@ -7,6 +7,7 @@ import { toast } from 'sonner';
 import { useNavigate } from 'react-router-dom';
 import useAuthStore from '@/store/authStore';
 import api from '@/lib/api';
+import { usePaystackPayment } from 'react-paystack';
 
 const CartItemCard = ({ item }: { item: CartItem }) => {
   const { updateQuantity, removeItem } = useCart();
@@ -94,6 +95,36 @@ const CartContent = () => {
   const { user } = useAuthStore();
   const navigate = useNavigate();
 
+  const config = {
+    reference: (new Date()).getTime().toString(),
+    email: user?.email || 'customer@aqualia.com',
+    amount: total * 100, // Paystack expects amount in kobo
+    publicKey: import.meta.env.VITE_PAYSTACK_PUBLIC_KEY,
+  };
+
+  const initializePayment = usePaystackPayment(config);
+
+  const onSuccess = async (reference: any, orderId: number) => {
+    try {
+      await api.post('/orders/verify-payment', {
+        order_id: orderId,
+        reference: reference.reference
+      });
+      toast.success('Payment successful and order verified!');
+      clearCart();
+      navigate('/track-order');
+    } catch (error: any) {
+      toast.error(error.response?.data?.error || 'Payment verification failed');
+    } finally {
+      setIsCheckingOut(false);
+    }
+  };
+
+  const onClose = () => {
+    toast.error('Payment cancelled');
+    setIsCheckingOut(false);
+  };
+
   const handleCheckout = async () => {
     if (!user) {
       toast.error('Please log in to checkout');
@@ -109,16 +140,20 @@ const CartContent = () => {
           quantity: item.quantity
         })),
         delivery_address_id: 1, // Mocked for now
-        payment_method: 'CARD' // Mocked
+        payment_method: 'CARD'
       };
 
       const response = await api.post('/orders', orderPayload);
-      toast.success(response.data.message || 'Order placed successfully!');
-      clearCart();
-      navigate('/track-order');
+      const orderId = response.data.order.id;
+
+      // Trigger Paystack payment window
+      initializePayment({
+        onSuccess: (ref) => onSuccess(ref, orderId),
+        onClose
+      });
+
     } catch (error: any) {
-      toast.error(error.response?.data?.error || 'Failed to checkout');
-    } finally {
+      toast.error(error.response?.data?.error || 'Failed to initialize checkout');
       setIsCheckingOut(false);
     }
   };

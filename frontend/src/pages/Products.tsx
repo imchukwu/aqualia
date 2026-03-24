@@ -18,9 +18,9 @@ import api from '@/lib/api';
 import useAuthStore from '@/store/authStore';
 
 const categoryIcons: Record<string, any> = {
-  Sachet: <Droplets className="w-4 h-4 mr-2" />,
-  Bottle: <Package className="w-4 h-4 mr-2" />,
-  Dispenser: <ThermometerSun className="w-4 h-4 mr-2" />,
+  'Sachet Water': <Droplets className="w-4 h-4 mr-2" />,
+  'Bottle Water': <Package className="w-4 h-4 mr-2" />,
+  'Dispenser Bottles': <ThermometerSun className="w-4 h-4 mr-2" />,
   Accessory: <Wrench className="w-4 h-4 mr-2" />,
 };
 

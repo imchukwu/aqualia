@@ -23,25 +23,25 @@ const Hero = () => {
 
             <div className="space-y-3 animate-fade-in-up delay-100">
               <h2 className="text-3xl md:text-5xl lg:text-[54px] font-extrabold text-[#1a365d] leading-[1.1] tracking-tight">
-                Pure, Safe, Refreshing
+                Pure Water. Trusted Quality. Everywhere.
                 <br />
-                <span className="text-[#1a365d] font-semibold text-2xl md:text-[34px] leading-tight mt-1 block tracking-normal">- Every Drop Counts</span>
+                {/* <span className="text-[#1a365d] font-semibold text-2xl md:text-[34px] leading-tight mt-1 block tracking-normal">- Every Drop Counts</span> */}
               </h2>
               <p className="text-base md:text-lg text-slate-700 font-medium max-w-md mt-4 leading-snug">
-                Trusted, clean water for homes, offices, and businesses
+                Aqualia Table Water is hygienically processed, NAFDAC-approved drinking water designed for homes, offices, events, and distributors across Nigeria.
               </p>
             </div>
 
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 pt-6 animate-fade-in-up delay-200">
-              <Link to="/#retailers">
-                <Button size="lg" className="w-full sm:w-auto h-[3.25rem] px-8 text-sm bg-[#ffc629] hover:bg-[#e6b225] text-[#1a365d] font-black uppercase tracking-widest rounded-md shadow-lg shadow-[#ffc629]/30 hover:scale-105 transition-all duration-300">
-                  Buy Now / Locate Retailer
+              <Link to="/distributors">
+                <Button size="lg" className="w-full sm:w-auto h-[3.25rem] px-8 text-sm bg-[#155baf] hover:bg-[#114b93] text-white font-black uppercase tracking-widest rounded-md shadow-lg shadow-[#155baf]/30 hover:scale-105 transition-all duration-300">
+                 Become a Distributor
                 </Button>
               </Link>
               <Link to="/distributor/register">
-                <Button size="lg" className="w-full sm:w-auto h-[3.25rem] px-8 text-sm bg-[#16604b] hover:bg-[#12503e] text-white font-bold uppercase tracking-widest rounded-md shadow-lg shadow-[#16604b]/30 hover:scale-105 transition-all duration-300">
-                  Become Distributor
+                <Button size="lg" className="w-full sm:w-auto h-[3.25rem] px-8 text-sm bg-[#e53e3e] hover:bg-[#c53030] text-white font-bold uppercase tracking-widest rounded-md shadow-lg shadow-[#e53e3e]/30 hover:scale-105 transition-all duration-300">
+                  Order Water
                 </Button>
               </Link>
             </div>
